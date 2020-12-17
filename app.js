@@ -1,1 +1,3 @@
-const day2 = require('./day2')
+const day1 = require('./day-01/day-01')
+const day2 = require('./day-02/day-02');
+const day3 = require('./day-03/day-03');

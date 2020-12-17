@@ -1,23 +1,44 @@
-const { count } = require('console');
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 
-let input = fs.readFileSync(path.resolve(__dirname, './day2input.txt'), 'utf8')
-
-// console.log(input)
+const passwordsList = fs.readFileSync(path.resolve(__dirname, './day-2-input.txt'), 'utf8');
 
 function countVerifiedPasswords(input) {
-    return input
-            .split('\n')
-            .reduce((validPasswords, currentPassword) => {
-                let parts = currentPassword.split(' ');
-                let minPolicy = parts[0].split('-')[0];
-                let maxPolicy = parts[0].split('-')[1];
-                let letterPolicy = parts[1].charAt(0);
-                let passwordBody = parts[2];
+  return input
+    .split('\n')
+    .reduce((validPasswords, currentPassword) => {
+      const parts = currentPassword.split(' ');
+      const minPolicy = parts[0].split('-')[0];
+      const maxPolicy = parts[0].split('-')[1];
+      const letterPolicy = parts[1].charAt(0);
+      const passwordBody = parts[2].split('');
+      const passwordMatches = passwordBody.filter((letter) => letter === letterPolicy).length;
 
-                let isMinPolicy = 
-            }, 0);
+      if (passwordMatches <= maxPolicy && passwordMatches >= minPolicy) {
+        return ++validPasswords;
+      }
+      return validPasswords;
+    }, 0);
 }
 
-console.log(countVerifiedPasswords(input))
+function countVerifiedPasswordsRightVersion(input) {
+  return input
+    .split('\n')
+    .reduce((validPasswords, currentPassword) => {
+      const parts = currentPassword.split(' ');
+      const firstPos = parts[0].split('-')[0];
+      const secondPos = parts[0].split('-')[1];
+      const letterPolicy = parts[1].charAt(0);
+      const passwordBody = parts[2].split('');
+      const firstPosMatch = passwordBody[firstPos - 1] === letterPolicy;
+      const secondPosMatch = passwordBody[secondPos - 1] === letterPolicy;
+
+      if ((firstPosMatch !== secondPosMatch)) {
+        return ++validPasswords;
+      }
+      return validPasswords;
+    }, 0);
+}
+
+console.log(countVerifiedPasswords(passwordsList));
+console.log(countVerifiedPasswordsRightVersion(passwordsList));
