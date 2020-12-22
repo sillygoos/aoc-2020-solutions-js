@@ -3,6 +3,10 @@ const path = require('path');
 
 const passwordsList = fs.readFileSync(path.resolve(__dirname, './day-2-input.txt'), 'utf8');
 
+/**
+ *
+ * @param {string} input
+ */
 function countVerifiedPasswords(input) {
   return input
     .split('\n')
@@ -21,6 +25,10 @@ function countVerifiedPasswords(input) {
     }, 0);
 }
 
+/**
+ *
+ * @param {string} input
+ */
 function countVerifiedPasswordsRightVersion(input) {
   return input
     .split('\n')
@@ -40,5 +48,4 @@ function countVerifiedPasswordsRightVersion(input) {
     }, 0);
 }
 
-console.log(countVerifiedPasswords(passwordsList));
-console.log(countVerifiedPasswordsRightVersion(passwordsList));
+console.log(`Day 2\ncorrect passwords: ${countVerifiedPasswords(passwordsList)}\nI said CORRECT passwords: ${countVerifiedPasswordsRightVersion(passwordsList)}\n`);

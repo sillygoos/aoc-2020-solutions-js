@@ -88,4 +88,4 @@ for (entry of passportDataFormatted) {
   if (passport.isFullyValid()) { fullyValidCounter++ };
 }
 
-console.log('passports with valid keys: ', validKeysCounter, 'fully valid passports: ', fullyValidCounter);
+console.log(`Day 4\npassports with valid keys: ${validKeysCounter}\npassports with valid keys and fields: ${fullyValidCounter}\n`);

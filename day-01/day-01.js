@@ -3,6 +3,10 @@ const path = require('path');
 
 const numbersList = fs.readFileSync(path.resolve(__dirname, './day-1-input.txt'), 'utf8').split('\n').map(Number);
 
+/**
+ *
+ * @param {number} input
+ */
 function findPairs(input) {
   for (let i = 0; i < input.length; i++) {
     for (let j = i + 1; j < input.length; j++) {
@@ -14,6 +18,10 @@ function findPairs(input) {
   }
 }
 
+/**
+ *
+ * @param {number} input
+ */
 function findTriplets(input) {
   for (let i = 0; i < input.length; i++) {
     for (let j = i + 1; j < input.length; j++) {
@@ -27,5 +35,4 @@ function findTriplets(input) {
   }
 }
 
-console.log(findPairs(numbersList));
-console.log(findTriplets(numbersList));
+console.log(`Day 1\npairs: ${findPairs(numbersList)}\ntriplets: ${findTriplets(numbersList)}\n`);
