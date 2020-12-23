@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const passportDataFormatted = fs.readFileSync(path.resolve(__dirname, './day-4-input.txt'), 'utf8')
+const passportDataFormatted = fs.readFileSync(path.resolve(__dirname, './day-04-input.txt'), 'utf8')
   .split('\n\n')
   .filter(x => x);
   // .map((entry) => entry.split('\n').join(' '));

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const numbersList = fs.readFileSync(path.resolve(__dirname, './day-1-input.txt'), 'utf8').split('\n').map(Number);
+const numbersList = fs.readFileSync(path.resolve(__dirname, './day-01-input.txt'), 'utf8').split('\n').map(Number);
 
 /**
  *

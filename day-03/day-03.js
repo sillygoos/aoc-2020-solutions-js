@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const forestMap = fs.readFileSync(path.resolve(__dirname, './day-3-input.txt'), 'utf8').split('\n').map((e) => e.split(''));
+const forestMap = fs.readFileSync(path.resolve(__dirname, './day-03-input.txt'), 'utf8').split('\n').map((e) => e.split(''));
 
 /**
  *

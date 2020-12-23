@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const seatCode = fs.readFileSync(path.resolve(__dirname, './day-5-input.txt'), 'utf8').split('\n');
+const seatCode = fs.readFileSync(path.resolve(__dirname, './day-05-input.txt'), 'utf8').split('\n');
 
 /**
  *
@@ -85,4 +85,4 @@ function checkGaps(seats) {
 const seatsSortedByID = getExactSeat(seatCode).sort((b, a) => a.ID - b.ID);
 // checkGaps(seatsSortedByID);
 
-console.log(`Day 5\nhighest ID among seats: ${seatsSortedByID[0].ID}\nyour seat ID: ${checkGaps(seatsSortedByID)}`);
+console.log(`Day 5\nhighest ID among seats: ${seatsSortedByID[0].ID}\nyour seat ID: ${checkGaps(seatsSortedByID)}\n`);

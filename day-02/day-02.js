@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const passwordsList = fs.readFileSync(path.resolve(__dirname, './day-2-input.txt'), 'utf8');
+const passwordsList = fs.readFileSync(path.resolve(__dirname, './day-02-input.txt'), 'utf8');
 
 /**
  *
