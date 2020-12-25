@@ -5,3 +5,4 @@ const day4 = require('./day-04/day-04');
 const day5 = require('./day-05/day-05');
 const day6 = require('./day-06/day-06');
 const day7 = require('./day-07/day-07');
+const day8 = require('./day-08/day-08');
